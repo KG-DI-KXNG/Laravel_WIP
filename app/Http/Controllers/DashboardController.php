@@ -45,4 +45,10 @@ class DashboardController extends Controller
         // dd($selections);
         return view('auth.viewselections',compact('selections'));
     }
+    public function courses(){
+        $courses=Course::with('TypesOfCourses')->get();
+        return view('courses',[
+            'courses'=>$courses,
+        ]);
+    }
 }
