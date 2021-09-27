@@ -50,6 +50,9 @@ Route::post("/course_add",[DashboardController::class,"course_add"])->name("cour
 
 Route::get("/courses",[DashboardController::class,"courses"])->name("courses");
 
+Route::get("/Selections",[DashboardController::class,"viewselection"])->name("selections");
+
+
 Route::get("/user/profile",[ProfileController::class,"index"])->name("Profile");
 Route::post("/user/profile/store",[ProfileController::class,"updateProfile"])->name("On-Update");
 
@@ -70,3 +73,4 @@ Route::middleware('admin')->group(function(){
     Route::get('/admin/course/delete{id}', [AdminController::class, 'delete'])->name('deleteCourse');
 
 });
+

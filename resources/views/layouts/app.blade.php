@@ -20,6 +20,7 @@
         <li><a href="/home" class="p-2">Home</a></li>
         <li><a href="{{route('Dashboard')}}" class="p-2">Dashboard</a></li>
         <li><a href="{{ route('course_selcetion') }}" class="p-2">Course Selection</a></li>
+        <li><a href="{{ route('selections') }}" class="p-2">View Selection</a></li>
         <li><a href="{{ route('courses') }}"  class="p-2">Courses</a></li>
     </ul>
 

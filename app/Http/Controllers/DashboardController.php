@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-<<<<<<< HEAD
 use App\Models\StudentSelection;
-=======
 use App\Models\TypesOfCourse;
->>>>>>> b756398713b708610770db699811083d95f951e4
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,7 +21,7 @@ class DashboardController extends Controller
 
         $courses = Course::all();
 
-        return view('courseSelection', ['courses' => $courses])->with('course','selected');
+        return view('admin.courseSelection', ['courses' => $courses])->with('course','selected');
 
     }
 
@@ -38,5 +35,11 @@ class DashboardController extends Controller
         ]);
 
         return redirect()->route('Dashboard');
+    }
+
+    function viewselection(){
+        $selections=StudentSelection::with('Users')->with('Courses')->get();
+        // dd($selections);
+        return view('auth.viewselections',compact('selections'));
     }
 }
