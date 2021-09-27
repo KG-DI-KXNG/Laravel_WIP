@@ -27,6 +27,9 @@ class DashboardController extends Controller
 
     public function course_add(Request $request)
     {
+        $this->validate($request,[
+            'course_id'=>'required'
+        ]);
         StudentSelection::create([
             'user_id' => Auth::user()->id,
             'course_id' => $request->course_id,
