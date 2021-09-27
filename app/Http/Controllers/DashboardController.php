@@ -34,7 +34,7 @@ class DashboardController extends Controller
             'is_approved' => 0,
         ]);
 
-        return redirect()->route('Dashboard');
+        return redirect()->route('selections');
     }
 
     function viewselection(){
